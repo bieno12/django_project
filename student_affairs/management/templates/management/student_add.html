@@ -1,0 +1,77 @@
+{% extends 'management/base.html' %}
+
+{% block title %}Add Student{% endblock %}
+
+{% block content %}
+	{%if errors%}
+	<div class="container">
+		<label>errors:</label>
+		{%for key, value in errors.items%}
+		<span>{{key}}: {{value}}</span>
+		<br>
+		{%endfor%}
+	</div>
+	{%endif%}
+	<div class="container center">
+		<h1>Add New Student</h1>
+		<form method="POST" class="center student-form">
+			{% csrf_token %}
+			<div class="form-row">
+				<label for="id">ID:</label>
+				<input type="number" name="id" id="id">
+			</div>
+
+			<div class="form-row">
+				<label for="name">Name:</label>
+				<input type="text" name="name" id="name">
+			</div>
+
+			<div class="form-row">
+				<label for="email">E-mail:</label>
+				<input type="email" name="email" id="email">
+			</div>
+			<div class="form-row">
+				<label for="phone">Phone Number:</label>
+				<input type="text" name="phone_number" id="phone" maxlength="11">
+			</div>
+
+			<div class="form-row">
+				<label for="date">Date of birth:</label>
+				<input type="date" name="date_of_birth" id="date">
+			</div>
+
+			<div class="form-row">
+				<label for="gpa">GPA:</label>
+				<input type="number" name="gpa" id="gpa">
+			</div>
+
+			<div class="form-row">
+				<label for="gender">Gender:</label><br>
+				<input type="radio" id="female" name="gender" value="F">
+				<label for="female">Female</label>
+				<input type="radio" id="male" name="gender" value="M">
+				<label for="male">Male</label>
+			</div>
+
+			<div class="form-row">
+				<label for="level">Level:</label>
+				<select name="level" id="lvl">
+					<option value="1">First Level</option>
+					<option value="2">Second Level</option>
+					<option value="3">Third Level</option>
+					<option value="4">fourth Level</option>
+				</select>
+			</div>
+			<div class="form-row">
+				<label for="status">Status:</label>
+				<select name="status" id="stat">
+					<option value="active">Active</option>
+					<option value="inactive">inactive</option>
+				</select>
+			</div>
+			<div class="form-row">
+				<input type="submit" name="" id="">
+			</div>
+		</form>
+	</div>
+{% endblock content%}

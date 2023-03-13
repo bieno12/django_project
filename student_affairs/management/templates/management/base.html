@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <title>{% block title %}My amazing site{% endblock %}</title>
+	{% block head%}{%endblock%}
+</head>
+
+<body>
+	    <div class="container" style="margin: 0px;">
+		<ul id="navbar">
+			<li id="nav-item"><a href="{% url 'home' %}">Home</a></li>
+			<li id="nav-item"><a href="{% url 'student_list' %}">students</a></li>
+			<li id="nav-item"><a href="{% url 'student_add' %}">add student</a></li>
+			<li id="nav-item"><a href="{% url 'search' %}">search</a></li>
+			<li id="nav-item"><a href="{% url 'departments' %}">departments</a></li>
+			<li id="nav-item"><a href="{% url 'about' %}">About</a></li>
+		</ul>
+    </div>
+
+    <div id="content">
+        {% block content %}
+		<h1>
+		
+			 Student Affairs site
+		</h1>
+		{% endblock %}
+    </div>
+</body>
+</html>

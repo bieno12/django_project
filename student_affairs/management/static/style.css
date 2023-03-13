@@ -1,0 +1,97 @@
+body, #content 
+{
+	background-color: #272727;
+	color: rgb(223, 223, 223);
+	font-size: xx-large;
+
+}
+
+button, input[type=submit]
+{
+	color: rgb(162, 162, 162);
+	background-color: rgb(37, 37, 37);
+	border: none;
+	padding: 6px;
+	font-size: xx-large;
+	cursor: pointer;
+}
+
+button:hover, input[type=submit]:hover {
+	background: #2d2d2d;
+}
+
+.container{
+	margin-top: 2vw;
+	background-color: #333;
+	box-shadow: 2px 2px 2px rgb(0, 0, 0);
+
+}
+
+#navbar {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+  
+#nav-item {
+	float: left;
+}
+
+#nav-item a {
+	display: block;
+	text-align: center;
+	padding: 14px 16px;
+	color: white;
+	text-decoration: none;
+}
+
+#nav-item a:hover:not(.active) {
+	background-color: #111;
+}
+
+.center
+{
+	text-align: center;
+}
+
+.student-form input[type=text], input[type=number], input[type=email], input[type=date]
+{
+	color: rgb(162, 162, 162);
+	background-color: rgb(37, 37, 37);
+	border: none;
+	width: 100%;
+	padding: 6px;
+	margin-right: 0px;
+	font-size: xx-large;
+}
+
+
+label
+{
+	display: inline;
+}
+
+form
+{
+	width: 50%;
+	display: inline-block;
+}
+.form-row
+{
+	margin: 5px;
+	display: block;
+}
+
+.a-button:link, .a-button:visited {
+	background-color: rgb(37, 37, 37);
+	color: white;
+	padding: 14px 25px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.a-button:hover, .a-button:active {
+	background: #2d2d2d;
+}

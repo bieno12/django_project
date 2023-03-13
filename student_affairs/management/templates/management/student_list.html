@@ -1,0 +1,32 @@
+{% extends "management/base.html" %}
+
+{% block title %}All Students{% endblock %}
+
+{% block content %}
+	<div class="container center">
+		<h3 class="center">Students</h3>
+		<div>
+			<table style="margin: auto;">
+				<tr >
+					<th>Student Name</th>
+					<th>ID</th>
+					<th>Status</th>
+				</tr>
+				{% for student in student_list %}
+				<tr id="student-item">
+					<td class="student-data">{{student.name}}</td>
+					<td class="student-data">{{student.id}}</td>
+					<td class="student-data">{{student.status}}</td>
+					<td class="student-data">
+						<a class="a-button" href="{% url 'student_edit' student.id %}">edit</button>
+					</td>
+					<td class="student-data">
+						<a class="a-button" href="{% url 'student_edit' student.id %}">assign</button>
+					</td>
+				</tr>
+				{% endfor %}	
+			</table>
+		</div>
+
+	</div>
+{% endblock content%}

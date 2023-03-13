@@ -1,0 +1,45 @@
+{% extends "management/base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block head %}
+
+<link rel="stylesheet" href="{% static 'search.css'%}">
+{% endblock %}
+
+
+{% block content %}
+		<div id="search-container" class="container center">
+			<span>search: </span>
+			<form style="display: inline;">
+				<input type="text" placeholder="Search..." name="search">
+				<button type="submit">Go</button>  
+			</form>
+		</div>
+
+	{% if student_results %}
+	<div id="result" class="container center">
+		<h3 class="center">Search Results</h3>
+		<div id="result-container" >
+			<table style="margin: auto;">
+				<tr >
+					<th>Student Name</th>
+					<th>ID</th>
+				</tr>
+				{% for student in student_results %}
+				<tr id="student-item">
+					<td class="student-data">{{student.name}}</td>
+					<td class="student-data">{{student.id}}</td>
+					<td class="student-data">
+						<button type="button" >edit</button>
+					</td>
+					<td class="student-data">
+						<button type="button" >assign</button>
+					</td>
+				</tr>
+				{% endfor %}	
+			</table>
+		</div>
+
+	</div>
+	{% endif%}
+{% endblock content%}

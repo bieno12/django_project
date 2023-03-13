@@ -1,0 +1,15 @@
+#search-container input[type=text]
+{
+
+	color: rgb(162, 162, 162);
+	background-color: rgb(37, 37, 37);
+	border: none;
+	padding: 6px;
+	margin-right: 0px;
+	font-size: xx-large;
+}
+
+#result
+{
+	margin-top: 2vw;
+}

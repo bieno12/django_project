@@ -1,0 +1,79 @@
+{% extends 'management/base.html' %}
+
+{% block title %}edit Student{% endblock %}
+
+{% block content %}
+	{%if errors.student_error%}
+	<div class="container">
+		<label>errors:</label>
+		{%for key, value in errors.items%}
+		<span>{{key}}: {{value}}</span>
+		<br>
+		{%endfor%}
+	</div>
+	{%else%}
+	<div class="container center">
+		<h1>Edit Student </h1>
+		<form method="POST" class="center student-form">
+			{% csrf_token %}
+			<div class="form-row">
+				<label for="id">ID:</label>
+				<input type="number" name="id" id="id" value="{{student.id}}">
+			</div>
+
+			<div class="form-row">
+				<label for="name">Name:</label>
+				<input type="text" name="name" id="name" value="{{student.name}}">
+			</div>
+
+			<div class="form-row">
+				<label for="email">E-mail:</label>
+				<input type="email" name="email" id="email" value="{{student.email}}">
+			</div>
+			<div class="form-row">
+				<label for="phone">Phone Number:</label>
+				<input type="text" name="phone_number" id="phone" maxlength="11" value="{{student.mobile_number}}">
+			</div>
+
+			<div class="form-row">
+				<label for="date">Date of birth:</label>
+				<input type="date" name="date_of_birth" id="date" value='{{student.date_of_birth |date:"Y-m-d"}}'>
+			</div>
+
+			<div class="form-row">
+				<label for="gpa">GPA:</label>
+				<input type="number" name="gpa" id="gpa" value="{{student.gpa}}">
+			</div>
+
+			<div class="form-row">
+				<label for="gender">Gender:</label><br>
+				<input type="radio" id="female" name="gender" value="F" {%if student.gender == 'F'%} checked{%endif%}>
+				<label for="female">Female</label>
+				<input type="radio" id="male" name="gender" value="M" {%if student.gender == 'M'%} checked {%endif%}>
+				<label for="male">Male</label>
+			</div>
+
+			<div class="form-row">
+				<label for="level">Level:</label>
+				<select name="level" id="lvl">
+					<option value="1" {%if student.level == '1'%} selected="selected" {%endif%}>First Level</option>
+					<option value="2" {%if student.level == '2'%} selected="selected" {%endif%}>Second Level</option>
+					<option value="3" {%if student.level == '3'%} selected="selected" {%endif%}>Third Level</option>
+					<option value="4" {%if student.level == '4'%} selected="selected" {%endif%}>fourth Level</option>
+				</select>
+			</div>
+			<div class="form-row">
+				<label for="status">Status:</label>
+				<select name="status" id="stat">
+					<option value="inactive" {%if student.status == 'inactive'%} selected="selected" {%endif%}>inactive</option>
+					<option value="active" {%if student.status == 'active'%} selected="selected" {%endif%}>Active</option>
+				</select>
+			</div>
+			<div class="form-row">
+				<input type="submit" name="" id="">
+			</div>
+		</form>
+	</div>
+	{%endif%}
+
+{% endblock content%}
